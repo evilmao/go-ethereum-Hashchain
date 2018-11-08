@@ -188,22 +188,38 @@ and agree upon. This consists of a small JSON file (e.g. call it `genesis.json`)
 
 ```json
 {
-  "config": {
-        "chainId": 0,
-        "homesteadBlock": 0,
-        "eip155Block": 0,
-        "eip158Block": 0
-    },
-  "alloc"      : {},
-  "coinbase"   : "0x0000000000000000000000000000000000000000",
-  "difficulty" : "0x20000",
-  "extraData"  : "",
-  "gasLimit"   : "0x2fefd8",
-  "nonce"      : "0x0000000000000042",
-  "mixhash"    : "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp"  : "0x00"
+	"config": {
+		"chainId": 8889,
+		"eip155Block": 0,
+		"eip158Block": 0,
+		"byzantiumBlock": 0,
+		"dpos": {
+			"validators": [
+				"0x907adb0c380602b7480a1a127928efebe0cbe0a4",
+				"0x88cf82735aaeec5d79d72ecec2cdae26bde86153",
+				"0x34d3a62aba58ff55117331b75b0ace21e8351e50",
+				"0x25c623dbd36f80665a87d8504230d18982372ca6",
+				"0x67665ef78387321237a3207bbd6335f6ca4f7ab2"
+			],
+			"maxValidatorSize": 6,
+			"blockInterval": 2
+		}
+	},
+	"nonce": "0x0000000000000042",
+	"difficulty": "0x1",
+	"mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"coinbase": "0x0000000000000000000000000000000000000000",
+	"timestamp": "0x00",
+	"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+	"extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
+	"gasLimit": "0x500000",
+	"alloc": {
+		"0x907adb0c380602b7480a1a127928efebe0cbe0a4": {
+			"balance": "90000000000000000000000000000000000"
+		}
+	}
 }
+
 ```
 
 The above fields should be fine for most purposes, although we'd recommend changing the `nonce` to
@@ -213,8 +229,8 @@ configs:
 
 ```json
 "alloc": {
-  "0x0000000000000000000000000000000000000001": {"balance": "111111111"},
-  "0x0000000000000000000000000000000000000002": {"balance": "222222222"}
+  "0x907adb0c380602b7480a1a127928efebe0cbe0a4": {"balance": "111111111"},
+  "0x25c623dbd36f80665a87d8504230d18982372ca6": {"balance": "222222222"}
 }
 ```
 
